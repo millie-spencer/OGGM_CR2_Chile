@@ -197,8 +197,9 @@ if __name__ == '__main__':
         gmb_error = gmb_maipo.err_dmdtda_mm_pon.sum()
         
         # Calculate area-weighted SMB
-        mb_sim = mb_per_glacier_id.drop(mb_per_glacier_id.columns[20], axis=1)
-        mb_sim = pd.DataFrame(mb_sim.mean(axis=1))
+        # preparación mb sim 
+        mb_sim = mb_per_glacier_id.drop('rgi_id', axis=1)  # FIXED: Drop by name, not position
+        mb_sim = pd.DataFrame(mb_sim.mean(axis=1)) # mean por row
         mb_sim.rename(columns={mb_sim.columns[0]: 'mb_sim'}, inplace=True)
         mb_sim['rgiid'] = mb_per_glacier_id['rgi_id']
         mb_sim['area_sim'] = areas
