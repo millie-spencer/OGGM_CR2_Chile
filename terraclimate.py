@@ -140,9 +140,10 @@ def process_terraclimate_data(gdir, y0=None, y1=None, output_filesuffix=None):
                                                               'meter',
                                                               'metres',
                                                               'metre']
-    assert nc_ts_tmp._nc.variables['temp'].units.lower() in ['m','degC','degc', 'degrees',
-                                                             'degrees celcius',
-                                                             'degree', 'c']
+    # Remove 'm' from temperature units
+    assert nc_ts_tmp._nc.variables['temp'].units.lower() in ['degc', 'degrees',
+                                                                'degrees celcius',
+                                                                'degree', 'c']
     assert nc_ts_pre._nc.variables['prcp'].units.lower() in ['kg m-2',
                                                                  'l m-2', 'mm',
                                                                  'millimeters',
