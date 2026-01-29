@@ -380,7 +380,7 @@ legend_handles = [
 ax.set_ylabel('Mass Balance (mm w.e./yr)', fontsize=15, fontweight='bold')
 ax.set_xlabel('Climate Dataset', fontsize=15, fontweight='bold')
 ax.set_title('Multi-Dataset Climate Forcing Comparison\n' + 
-            'DA1 Cluster (Maipo Basin) • 2000-2019\n' +
+            'DA1 Cluster • 2000-2019\n' +
             'Point = area-weighted mean | Error bar = ±1σ glacier variability',
             fontsize=16, fontweight='bold', pad=20)
 ax.set_xticks(x_pos)
