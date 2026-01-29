@@ -24,7 +24,6 @@ if not hasattr(np, 'warnings'):
 cfg.initialize(logging_level='WARNING')
 cfg.PARAMS['use_multiprocessing'] = False  # Set to False for macOS
 # when running all regions, rather than just one test region 
-# cfg.PARAMS['use_multiprocessing'] = True  # Much faster!
 cfg.PARAMS['continue_on_error'] = True
 cfg.PARAMS['run_mb_calibration'] = True
 cfg.PARAMS['store_model_geometry'] = True
@@ -54,10 +53,11 @@ if __name__ == '__main__':
     
     # listas de llamado
     # TEST MODE: Just DA1
-    list_region = ['DA1']
+    # list_region = ['DA1']
+    list_region = ['WA4']
     
-    # PARTIAL RUN: Test with 3 clusters
-    # list_region = ['DA1', 'DA2', 'DA3']
+    # PARTIAL RUN: Test with a few clusters
+    # list_region = ['WA3','WA4','WA5','WA6']
 
     # FULL RUN: Uncomment below to run all clusters
     # list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
