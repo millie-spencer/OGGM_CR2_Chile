@@ -52,10 +52,10 @@ if __name__ == '__main__':
     
     # TEST MODE: Process only one cluster
     # Change 'DA1' to match what you ran in Script 1
-    list_region = ['DA1']  # TESTING: Just one cluster
+    # list_region = ['DA1']  # TESTING: Just one cluster
     
     # FULL RUN: Uncomment line below to process all clusters
-    # list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
+    list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
     
     for zona in list_region:
         
