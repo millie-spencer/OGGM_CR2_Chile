@@ -53,7 +53,9 @@ datos_param = pandas.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files
 if __name__ == '__main__':
     
     # TEST MODE: Just DA1
-    list_region = ['DA1']
+    # list_region = ['DA1']
+    # In 01a_Andes_2000_2019_CRU_2023.py
+    list_region = ['WA5','WA6']
     
     # FULL RUN: Uncomment to run all clusters
     # list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
@@ -136,7 +138,7 @@ if __name__ == '__main__':
         print("\nRunning glacier evolution simulations...")
         workflow.execute_entity_task(tasks.run_with_hydro, gdirs,
                              ys=1999,
-                             ye=2020,
+                            #  ye=2020,
                              run_task=tasks.run_from_climate_data,
                              store_monthly_hydro=True,
                              ref_area_from_y0=True,

@@ -54,13 +54,13 @@ if __name__ == '__main__':
     # listas de llamado
     # TEST MODE: Just DA1
     # list_region = ['DA1']
-    list_region = ['WA4']
+    # list_region = ['WA4'] #still havent run 4-6
     
     # PARTIAL RUN: Test with a few clusters
     # list_region = ['WA3','WA4','WA5','WA6']
 
     # FULL RUN: Uncomment below to run all clusters
-    # list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
+    list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
     
     for zona in list_region:
         
@@ -103,14 +103,24 @@ if __name__ == '__main__':
                                                   prepro_base_url='https://cluster.klima.uni-bremen.de/~oggm/gdirs/oggm_v1.6/L1-L2_files/centerlines/',
                                                   prepro_border=80)
         
-           # Climate
+           # Climate processing and calibration
         cfg.PARAMS['baseline_climate'] = 'CR2MET25'
         from oggm.shop import cr2met_25
         cr2met_25.set_cr2met_url('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/')
-        workflow.execute_entity_task(cr2met_25.process_cr2met_25_data, gdirs) # ,output_filesuffix='_cr2met'
+        
+        # Process CR2MET data - saves climate_historical.nc to each glacier directory
+        workflow.execute_entity_task(cr2met_25.process_cr2met_25_data, gdirs)  # NO output_filesuffix
+        
         utils.get_geodetic_mb_dataframe()  # Small optim to avoid concurrency
-        workflow.execute_entity_task(tasks.mu_star_calibration_from_geodetic_mb, gdirs,ref_period='2000-01-01_2020-01-01') # edit climate.py Between lines 539 and 554
+       
+        # Calibrate mu_star to match geodetic observations (Hugonnet 2000-2020)
+        # This saves mu_star_glacierwide to local_mustar.json in each glacier directory
+        # NOT in the climate NetCDF attributes - stored separately as JSON
+        workflow.execute_entity_task(tasks.mu_star_calibration_from_geodetic_mb, gdirs, ref_period='2000-01-01_2020-01-01')
+        
+        # Create apparent mass balance using calibrated mu_star
         workflow.execute_entity_task(tasks.apparent_mb_from_any_mb, gdirs)
+        
         
         filter = border >= 20
         workflow.calibrate_inversion_from_consensus(gdirs,apply_fs_on_mismatch=True,error_on_mismatch=False,filter_inversion_output=filter)
@@ -127,7 +137,7 @@ if __name__ == '__main__':
         # save outputs 2000-2019
         workflow.execute_entity_task (tasks.run_with_hydro, gdirs,
                              ys=1999,  
-                             ye=2020,   
+                            #  ye=2020,   
                              run_task = tasks.run_from_climate_data,          # The task to run with hydro
                              store_monthly_hydro = True,                      # compute monthly hydro diagnostics
                              ref_area_from_y0 = True,                           # Even if the glacier may grow, keep the reference area as the year 0 of the simulation
