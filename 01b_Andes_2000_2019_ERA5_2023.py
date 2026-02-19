@@ -55,7 +55,7 @@ if __name__ == '__main__':
     # TEST MODE: Just DA1
     # list_region = ['DA1']
     # In 01a_Andes_2000_2019_CRU_2023.py
-    list_region = ['WA3','WA4','WA5','WA6']
+    list_region = ['WA5','WA6']
     
     # FULL RUN: Uncomment to run all clusters
     # list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
