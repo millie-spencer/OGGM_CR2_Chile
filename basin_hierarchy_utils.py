@@ -10,11 +10,6 @@ contained within Rio Maipo En Cabimbao, yet both are labeled 0).
 Source ArcGIS metadata confirms the field was likely never populated
 with real values, rather than corrupted downstream.
 
-This logic was originally developed in building_hucs_nested_basins.ipynb
-(Cells 2-3) and is extracted here so it has one canonical implementation,
-usable by that notebook, 02_glacier_to_basin_script.ipynb, and any
-future analysis that needs true basin nesting structure.
-
 Core method: for two basins A (smaller) and B (larger), A is considered
 "contained in" B if the overlap between A and B covers more than
 CONTAINMENT_THRESHOLD (default 90%) of A's own area. Depth 0 = a basin
