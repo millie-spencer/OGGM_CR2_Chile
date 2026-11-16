@@ -77,6 +77,7 @@ if __name__ == '__main__':
         
         # Extract glaciers for this cluster
         gdf_sel = datos_rgi[datos_rgi['Cluster'] == zona]
+        gdf_sel = gdf_sel[gdf_sel['TermType'] == 0]   # land-terminating only; calving glaciers excluded
         gdf_sel = list(gdf_sel.RGIId)
         
         # Extract parameters for this cluster
@@ -94,8 +95,9 @@ if __name__ == '__main__':
         rgi_id = zonax['rgi_id'].values
         area = zonax['area'].values
         
-        # Calculate total RGI area for this cluster
+        # Calculate total RGI area for this cluster (land-terminating only)
         rgi_area = datos_rgi[datos_rgi['Cluster'] == zona]
+        rgi_area = rgi_area[rgi_area['TermType'] == 0]
         rgi_area = rgi_area.Area.sum()
         
         ###########################################################################
@@ -106,8 +108,8 @@ if __name__ == '__main__':
         ID_rgi = pd.DataFrame(rgi_id)
         ID_rgi.rename(columns={ID_rgi.columns[0]: 'id'}, inplace=True)
         
-        # Extract area for year 2000 (should be at index 10)
-        ID_area = pd.DataFrame(ID_area.iloc[10])
+        # Extract area for year 2000 (index 1, since the run starts in 1999)
+        ID_area = pd.DataFrame(ID_area.iloc[1])
         ID_area.rename(columns={ID_area.columns[0]: 'area'}, inplace=True)
         ID_area = pd.concat([ID_rgi.reset_index(drop=True), ID_area], axis=1)
         ID_area = ID_area.dropna(axis=0)

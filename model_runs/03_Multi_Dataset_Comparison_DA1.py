@@ -154,7 +154,7 @@ box_data = [cr2_glacier_means.values, era5_glacier_means.values, cru_glacier_mea
 bp = ax2.boxplot(box_data, labels=datasets_short, 
                  patch_artist=True, showmeans=True,
                  meanprops=dict(marker='D', markerfacecolor='red', markersize=10, 
-                              markeredgecolor='black', markeredgewidth=1.5, label='Area-weighted mean'),
+                              markeredgecolor='black', markeredgewidth=1.5, label='Mean (unweighted)'),
                  medianprops=dict(color='black', linewidth=2.5, label='Median'),
                  widths=0.6)
 
@@ -181,7 +181,7 @@ box_legend = [
     Patch(facecolor='lightgray', edgecolor='black', linewidth=1.5, label='Box = IQR (middle 50%)'),
     Line2D([0], [0], color='black', linewidth=2.5, label='Median'),
     Line2D([0], [0], marker='D', color='w', markerfacecolor='red', 
-           markeredgecolor='black', markersize=8, linewidth=0, label='Area-weighted mean'),
+           markeredgecolor='black', markersize=8, linewidth=0, label='Mean (unweighted)'),
     Line2D([0], [0], color='darkred', linestyle='--', linewidth=2.5, label='GMB'),
 ]
 ax2.legend(handles=box_legend, loc='upper right', fontsize=9)
@@ -312,7 +312,7 @@ KEY POINTS:
   • Points = dataset means
   • Error bars = glacier spread (±1σ)
   • Spread between points = climate uncertainty
-  • All datasets within GMB uncertainty
+  • Datasets within GMB uncertainty: {sum(abs(v - gmb_value) <= gmb_error for v in smb_vals)}/3
   
 BIASES (relative to GMB):
   CR2MET: {cr2_smb_mean - gmb_value:+.1f} mm/yr ({(cr2_smb_mean - gmb_value)/gmb_value*100:+.1f}%)

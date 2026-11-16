@@ -1,4 +1,3 @@
-
 rm(list = ls())
 
 library(ncdf4)
@@ -21,7 +20,7 @@ print(dem)
 #  resample DEM        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
 
-# Raster dem to same climate resolution (misma resolucion espacial y extensión)
+# Raster dem to same climate resolution (misma resolucion espacial y extensiï¿½n)
 
   # lectura 1er raster desde nc tem
 t_grid = brick("C:/Users/caropara/Desktop/OGGM/cr2met/cr2met_2.5_octubre/CR2MET_tmean_v2.5_mon_1960_2021_005deg.nc", varname="tmean")
@@ -32,7 +31,7 @@ t_grid_1 = t_grid[[1]]
   # resample de DEM and clip extension usando t_grid_1
 dem_resam = resample(dem,t_grid_1,method='ngb')
 
-t_grid[[1]]       # acá # 2.5 resolution : 0.05, 0.05  (x, y)                     dimensions : 800, 220, 176000  (nrow, ncol, ncell)
+t_grid[[1]]       # acï¿½ # 2.5 resolution : 0.05, 0.05  (x, y)                     dimensions : 800, 220, 176000  (nrow, ncol, ncell)
 
 print(dem)        # resolution : 0.001225577, 0.001225577  (x, y)   dimensions : 60372, 31054, 1874792088  (nrow, ncol, ncell)
 print(dem_resam)  # resolution : 0.05, 0.05  (x, y)          dimensions : 800, 220, 176000  (nrow, ncol, ncell)
@@ -54,7 +53,7 @@ ncfname <- paste(ncpath, ncname, ".nc", sep="")
          # extracion te mean
 tmp_mean <- ncvar_get(vtmean,"tmean")
 
-         # extracción desde original
+         # extracciï¿½n desde original
 lon <- ncvar_get(vtmean,"lon")
 lat <- ncvar_get(vtmean,"lat")
 #time <- ncvar_get(vt,"time")
@@ -89,7 +88,7 @@ tmp_array <- array(tmp_mean, dim=c(NROW(lon),NROW(lat),NROW(time)))
 library(oceanmap)
 ele_array = raster2array(dem_resam)
 
-           # envío de variables 
+           # envï¿½o de variables 
 ncvar_put(ncout,tmp_def,tmp_array)
 ncvar_put(ncout,ele.def,ele_array)
 
@@ -127,7 +126,7 @@ ncfname <- paste(ncpath, ncname, ".nc", sep="")
 # extracion variables
 pre <- ncvar_get(vp,"pr_month")
 
-# extracción desde original
+# extracciï¿½n desde original
 lon <- ncvar_get(vp,"lon")
 lat <- ncvar_get(vp,"lat")
 #time <- ncvar_get(vp,"time")
@@ -158,7 +157,7 @@ ncout <- nc_create(ncfname,list(pr.def),force_v4=TRUE)
 # to array
 pr_array <- array(pre, dim=c(NROW(lon),NROW(lat),NROW(time)))
 
-# envío de variables 
+# envï¿½o de variables 
 ncvar_put(ncout,pr.def,pr_array)
 
 
@@ -191,7 +190,7 @@ plot(pp[[744]])
 
 
 
-# comparación P 2.5 y P 2.0
+# comparaciï¿½n P 2.5 y P 2.0
 
 p25x = brick("C:/Users/caropara/Desktop/OGGM/cr2met/cr2met_2.5_octubre/CR2met_pr_2022_1960_dic_2021_2.5.nc", varname="prcp")
 p20 = brick("C:/Users/caropara/Desktop/OGGM/cr2met/CR2met_pr_2022_1950_dic_2020.nc", varname="prcp")
@@ -241,7 +240,7 @@ legend("topleft",
 
 
 
-# comparación T 2.5 y T 2.0
+# comparaciï¿½n T 2.5 y T 2.0
 
 p25 = brick("C:/Users/caropara/Desktop/OGGM/cr2met/cr2met_2.5_octubre/CR2met_t2m_hgt_2022_1960_dic_2021_2.5.nc", varname="temp")
 p20 = brick("C:/Users/caropara/Desktop/OGGM/cr2met/CR2met_t2m_hgt_2022_1950_dic_2020.nc", varname="temp")
@@ -264,8 +263,8 @@ P25$date = seq(as.Date("1960/1/1"), by = "month", length.out = 744)
 P2 = merge(P20,P25,by="date")
 P2$year = lubridate::year(P2$date)
 
-plot(P2$date,P$`as.numeric(P20)`, type="l")
-lines(P2$date,P$`as.numeric(P25_2)`, type="l", col="red")
+plot(P2$date,P2$`as.numeric(P20)`, type="l")
+lines(P2$date,P2$`as.numeric(P25_2)`, type="l", col="red")
 
 mean(P2$`as.numeric(P20)`)
 mean(P2$`as.numeric(P25_2)`)
@@ -282,10 +281,6 @@ f2=
   plot(P_mean$year, P_mean$`as.numeric(P25_2)`, type='l', col = 'red',ylim = c(7, 11) )
 lines(P_mean$year, P_mean$`as.numeric(P20)`, type='l', col = 'blue')
 legend("topleft",
-       c(paste("temp 2.5   ",mean_25,' mm/yr',sep = ''),paste("temp 2.0   ",mean_20,' mm/yr',sep = '')),
+       c(paste("temp 2.5   ",mean_25,' degC',sep = ''),paste("temp 2.0   ",mean_20,' degC',sep = '')),
        fill=c("red","blue")
 )
-
-
-
-

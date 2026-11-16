@@ -65,12 +65,12 @@ if __name__ == '__main__':
     for zona in list_region:
         
     # directorio
-    #    zona = 'OT3'
-        salida = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/' + zona + '/'
+        salida = '/Users/milliespencer/Output_Final/CR2MET/' + zona + '/'
         cfg.PATHS['working_dir'] = salida                                 
     
     # extraccion de glaciares por zona
         gdf_sel = datos_rgi[datos_rgi['Cluster'] == zona]
+        gdf_sel = gdf_sel[gdf_sel['TermType'] == 0]   # land-terminating only; calving glaciers excluded
         gdf_sel = list(gdf_sel.RGIId)
         
     # se extrae LT usando id glaciar
@@ -148,7 +148,6 @@ if __name__ == '__main__':
         rgi_reg = '_' + zona
         opath = os.path.join(sum_dir, 'glacier_statistics_{}.csv'.format(rgi_reg))
         utils.compile_glacier_statistics(gdirs, path=opath)
-        mb_dif = utils.compile_glacier_statistics(gdirs, path=opath)
         opath = os.path.join(sum_dir, 'climate_statistics_{}.csv'.format(rgi_reg))
         utils.compile_climate_statistics(gdirs, path=opath)
         opath = os.path.join(sum_dir, 'fixed_geometry_mass_balance_{}.csv'.format(rgi_reg))
@@ -156,3 +155,5 @@ if __name__ == '__main__':
         
         # compilación datos en un archivo
         ds2000 = utils.compile_run_output(gdirs, input_filesuffix= compilacion )
+        output_file = os.path.join(salida, f'run_output{compilacion}.nc')
+        ds2000.to_netcdf(output_file)

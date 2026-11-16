@@ -19,6 +19,10 @@ print("\n" + "="*70)
 print("MULTI-DATASET COMPARISON: CR2MET vs CRU vs ERA5")
 print("="*70)
 
+# Densities (OGGM default ice density is 900 kg m-3)
+ICE_DENSITY = 900.
+WATER_DENSITY = 1000.
+
 # All 10 clusters
 clusters = ['OT3', 'DA1', 'DA2', 'DA3', 'WA1', 'WA2', 'WA3', 'WA4', 'WA5', 'WA6']
 
@@ -78,12 +82,14 @@ for dataset_name, dataset_config in datasets.items():
             total_area_m2 = area_2000.sum().values
             n_years = 20
             
-            smb = float((volume_2020 - volume_2000) / total_area_m2 / n_years)
+            smb = float((volume_2020 - volume_2000) / total_area_m2 / n_years) * ICE_DENSITY / WATER_DENSITY  # m ice -> m w.e.
             
             # Get geodetic observations
-            cluster_glaciers = datos_rgi[datos_rgi['Cluster'] == cluster]['RGIId'].tolist()
+            cluster_glaciers = datos_rgi[(datos_rgi['Cluster'] == cluster) & (datos_rgi['TermType'] == 0)]['RGIId'].tolist()
+            sim_ids = set(ds['rgi_id'].values[~np.isnan(area_2000.values)])
+            cluster_glaciers = [g for g in cluster_glaciers if g in sim_ids]
             gmb_data = geodetic_ref[geodetic_ref.index.isin(cluster_glaciers)]
-            
+                        
             if len(gmb_data) > 0:
                 gmb = np.average(gmb_data['dmdtda'], weights=gmb_data['area'])
                 gmb_error = np.average(gmb_data['err_dmdtda'], weights=gmb_data['area'])

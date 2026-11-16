@@ -2,13 +2,12 @@
 completeness_utils.py
 
 Shared streamflow-gauge daily-completeness criteria (Alexis Caro's method),
-used by both the main national pipeline (all_chile_glacier_streamflow_v3.ipynb,
-Cell 8) and the grouped-basin pipeline (glacier_to_basin_script.ipynb).
+used by 02_final_basin_set.ipynb and 03_glacier_streamflow_fraction.ipynb
+(and any other notebook that imports assess_completeness).
 
-Previously this logic was implemented independently in both notebooks 01 and 02.
 Any future change to the completeness criteria (e.g. revisiting the
-5-and-5 decade-split rule) should be made HERE ONLY, so both pipelines
-stay in sync automatically.
+5-and-5 decade-split rule) should be made HERE ONLY, so every notebook
+stays in sync automatically.
 
 TWO-ZONE RULE:
   North/Central (lat > -38S): >= 5 complete years in 2000-2009

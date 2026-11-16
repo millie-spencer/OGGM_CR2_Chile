@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project simulates monthly glacier mass balance for all ~13,000 Chilean glaciers (2000–2019) using OGGM v1.6, forced with three climate datasets (CR2MET, ERA5, CRU), and estimates the relative contribution of glacier melt to streamflow across glacierized basins throughout Chile. Simulated mass balance is calibrated against geodetic observations from Hugonnet et al. (2021).
+This project simulates monthly glacier mass balance for all ~13,000 Chilean glaciers (2000–2019) using OGGM v1.5.3, forced with three climate datasets (CR2MET, ERA5, CRU), and estimates the relative contribution of glacier melt to streamflow across glacierized basins throughout Chile. Simulated mass balance is calibrated against geodetic observations from Hugonnet et al. (2021).
 
 ---
 
