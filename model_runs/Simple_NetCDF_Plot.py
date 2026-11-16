@@ -20,16 +20,16 @@ print("="*70)
 
 # Clusters and their NetCDF file paths
 clusters_to_check = {
-    'DA1': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/DA1/run_output_2000_2019_hydro_TC_DA1.nc',
-    'DA2': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/DA2/run_output_2000_2019_hydro_TC_DA2.nc',
-    'DA3': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/DA3/run_output_2000_2019_hydro_TC_DA3.nc',
-    'WA1': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/WA1/run_output_2000_2019_hydro_TC_WA1.nc',
-    'WA2': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/WA2/run_output_2000_2019_hydro_TC_WA2.nc',
-    'WA3': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/WA3/run_output_2000_2019_hydro_TC_WA3.nc',
+    'DA1': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/DA1/run_output_2000_2019_hydro_TC_DA1.nc',
+    'DA2': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/DA2/run_output_2000_2019_hydro_TC_DA2.nc',
+    'DA3': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/DA3/run_output_2000_2019_hydro_TC_DA3.nc',
+    'WA1': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/WA1/run_output_2000_2019_hydro_TC_WA1.nc',
+    'WA2': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/WA2/run_output_2000_2019_hydro_TC_WA2.nc',
+    'WA3': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/WA3/run_output_2000_2019_hydro_TC_WA3.nc',
 }
 
 # Load RGI data
-rgi_file = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv'
+rgi_file = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv'
 datos_rgi = pd.read_csv(rgi_file)
 
 # Load geodetic data
@@ -151,7 +151,7 @@ for i, row in df.iterrows():
 
 plt.tight_layout()
 
-output = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/CR2MET_Clusters_Simple.png'
+output = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/CR2MET_Clusters_Simple.png'
 plt.savefig(output, dpi=300, bbox_inches='tight')
 print(f"\n✓ Saved: {output}")
 

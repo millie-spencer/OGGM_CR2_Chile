@@ -36,9 +36,9 @@ def read_comparison_csv(filepath):
 # Load mean values from comparison files
 ##############################################################################
 
-cr2_data = read_comparison_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/DA1/comparacion_gmb_smb_DA1_.csv')
-era5_data = read_comparison_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/ERA5/DA1/comparacion_gmb_smb_DA1_.csv')
-cru_data = read_comparison_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CRU/DA1/comparacion_gmb_smb_DA1_.csv')
+cr2_data = read_comparison_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/DA1/comparacion_gmb_smb_DA1_.csv')
+era5_data = read_comparison_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/ERA5/DA1/comparacion_gmb_smb_DA1_.csv')
+cru_data = read_comparison_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CRU/DA1/comparacion_gmb_smb_DA1_.csv')
 
 # Extract mean values
 gmb_value = cr2_data['GMB']
@@ -57,9 +57,9 @@ cru_n = cru_data['n_g_oggm']
 ##############################################################################
 
 # Load per-glacier MB timeseries
-cr2_mb = pd.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/DA1/mb.csv')
-era5_mb = pd.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/ERA5/DA1/mb.csv')
-cru_mb = pd.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CRU/DA1/mb.csv')
+cr2_mb = pd.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/DA1/mb.csv')
+era5_mb = pd.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/ERA5/DA1/mb.csv')
+cru_mb = pd.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CRU/DA1/mb.csv')
 
 # Extract only numeric columns (skip RGI ID column)
 # Find the first column that's all numeric (years)
@@ -325,7 +325,7 @@ ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes,
         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.4))
 
 plt.tight_layout(h_pad=3.0, w_pad=2.5)
-plt.savefig('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/Multi_Dataset_Comparison_Points_DA1.png', 
+plt.savefig('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/Multi_Dataset_Comparison_Points_DA1.png', 
            dpi=300, bbox_inches='tight')
 print("✓ Saved: Multi_Dataset_Comparison_Points_DA1.png")
 
@@ -397,7 +397,7 @@ for i, (x, val, std) in enumerate(zip(x_pos, smb_vals, smb_stds)):
                     edgecolor='black', linewidth=2, alpha=0.95))
 
 plt.tight_layout()
-plt.savefig('/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/Multi_Dataset_Comparison_Publication_DA1.png', 
+plt.savefig('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/Multi_Dataset_Comparison_Publication_DA1.png', 
            dpi=300, bbox_inches='tight')
 print("✓ Saved: Multi_Dataset_Comparison_Publication_DA1.png")
 
@@ -413,5 +413,5 @@ print("\nVisualization:")
 print("  • Large dots = dataset mean (area-weighted)")
 print("  • Error bars = ±1σ glacier-to-glacier variability")
 print("  • Spread between dots = climate forcing uncertainty")
-print("\nLocation: /Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/")
+print("\nLocation: /Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/")
 print("="*70 + "\n")

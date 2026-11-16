@@ -38,11 +38,11 @@ cfg.PARAMS["temp_all_liq"] = 2.0
 cfg.PARAMS["temp_melt"] = 0
 
 # Load glacier and parameter data
-datos_rgi = pd.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
-datos_param = pd.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/LR_Pf.csv')
+datos_rgi = pd.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
+datos_param = pd.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/LR_Pf.csv')
 
 # Base directory
-output_base = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/ERA5/'
+output_base = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/ERA5/'
 
 ##########################################################################
 # Main execution (FIXED: Wrapped in if __name__ == '__main__')

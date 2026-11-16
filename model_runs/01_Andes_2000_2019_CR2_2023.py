@@ -42,9 +42,9 @@ cfg.PARAMS["temp_melt"] = 0
 cfg.PARAMS['cfl_min_dt'] = 10 # para simular glaciares con problemas
 
 # glacier call #############################
-datos_rgi = pandas.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
+datos_rgi = pandas.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
 # call parameters
-datos_param = pandas.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/LR_Pf.csv')
+datos_param = pandas.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/LR_Pf.csv')
 
 
 # # INICIO ITERACION por region GLACIO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     for zona in list_region:
         
     # directorio
-        salida = '/Users/milliespencer/Output_Final/CR2MET/' + zona + '/'
+        salida = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/' + zona + '/'
         cfg.PATHS['working_dir'] = salida                                 
     
     # extraccion de glaciares por zona
@@ -106,7 +106,7 @@ if __name__ == '__main__':
            # Climate processing and calibration
         cfg.PARAMS['baseline_climate'] = 'CR2MET25'
         from oggm.shop import cr2met_25
-        cr2met_25.set_cr2met_url('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/')
+        cr2met_25.set_cr2met_url('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/')
         
         # Process CR2MET data - saves climate_historical.nc to each glacier directory
         workflow.execute_entity_task(cr2met_25.process_cr2met_25_data, gdirs)  # NO output_filesuffix

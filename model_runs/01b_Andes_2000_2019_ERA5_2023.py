@@ -43,8 +43,8 @@ cfg.PARAMS["temp_melt"] = 0
 cfg.PARAMS['cfl_min_dt'] = 10
 
 # Load glacier and parameter data
-datos_rgi = pandas.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
-datos_param = pandas.read_csv('/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/LR_Pf.csv')
+datos_rgi = pandas.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv')
+datos_param = pandas.read_csv('/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/LR_Pf.csv')
 
 ##########################################################################
 # Main execution
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         print(f"{'='*70}\n")
         
         # Output directory for ERA5 results
-        salida = '/Users/milliespencer/Output_Final/ERA5/' + zona + '/'
+        salida = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/ERA5/' + zona + '/'
         os.makedirs(salida, exist_ok=True)
         cfg.PATHS['working_dir'] = salida
         

@@ -29,24 +29,24 @@ clusters = ['OT3', 'DA1', 'DA2', 'DA3', 'WA1', 'WA2', 'WA3', 'WA4', 'WA5', 'WA6'
 # Dataset configurations
 datasets = {
     'CR2MET': {
-        'path': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CR2MET/{}/run_output_2000_2019_hydro_TC_{}.nc',
+        'path': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CR2MET/{}/run_output_2000_2019_hydro_TC_{}.nc',
         'color': '#e74c3c',
         'marker': 'o'
     },
     'CRU': {
-        'path': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/CRU/{}/run_output_2000_2019_hydro_CRU_{}.nc',
+        'path': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/CRU/{}/run_output_2000_2019_hydro_CRU_{}.nc',
         'color': '#3498db',
         'marker': 's'
     },
     'ERA5': {
-        'path': '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Output/ERA5/{}/run_output_2000_2019_hydro_ERA5_{}.nc',
+        'path': '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Output/ERA5/{}/run_output_2000_2019_hydro_ERA5_{}.nc',
         'color': '#2ecc71',
         'marker': '^'
     }
 }
 
 # Load RGI data
-rgi_file = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv'
+rgi_file = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/files_chile_OGGM_climate_comparison/RGI_BNA_Clusters.csv'
 datos_rgi = pd.read_csv(rgi_file)
 
 # Load geodetic data
@@ -314,7 +314,7 @@ ax6.text(0.05, 0.95, summary_text, fontsize=10, family='monospace',
 
 plt.tight_layout()
 
-output = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Multi_Dataset_Comparison_Complete.png'
+output = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Multi_Dataset_Comparison_Complete.png'
 plt.savefig(output, dpi=300, bbox_inches='tight')
 print(f"\n✓ Saved: {output}")
 
@@ -322,7 +322,7 @@ print(f"\n✓ Saved: {output}")
 # Save summary CSV
 ##############################################################################
 
-csv_output = '/Users/milliespencer/Desktop/CR2_OGGM_Paper/Multi_Dataset_Summary.csv'
+csv_output = '/Users/milliespencer/v2_CR2_OGGM_project_11_2026/Multi_Dataset_Summary.csv'
 df.to_csv(csv_output, index=False)
 print(f"✓ Saved: {csv_output}")
 
