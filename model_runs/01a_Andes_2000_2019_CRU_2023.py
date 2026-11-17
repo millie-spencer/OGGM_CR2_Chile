@@ -163,7 +163,8 @@ if __name__ == '__main__':
         print("\nCompiling run outputs...")
         ds2000 = utils.compile_run_output(gdirs, input_filesuffix=compilacion)
         output_file = os.path.join(salida, f'run_output{compilacion}.nc')
-        ds2000.to_netcdf(output_file)
+        if ds2000 is not None:  # OGGM saves the file itself and returns None for 1000+ glaciers
+            ds2000.to_netcdf(output_file)
         
         print(f"\n{'='*70}")
         print(f"FINISHED PROCESSING CLUSTER: {zona}")
