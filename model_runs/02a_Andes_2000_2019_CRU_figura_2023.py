@@ -77,7 +77,7 @@ if __name__ == '__main__':
         
         # Extract glaciers for this cluster
         gdf_sel = datos_rgi[datos_rgi['Cluster'] == zona]
-        gdf_sel = gdf_sel[gdf_sel['TermType'] == 0]   # land-terminating only; calving glaciers excluded
+        gdf_sel = gdf_sel[gdf_sel['TermType'] != 1]   # marine-terminating excluded; land- and lake-terminating kept
         gdf_sel = list(gdf_sel.RGIId)
         
         # Extract parameters for this cluster
@@ -97,7 +97,7 @@ if __name__ == '__main__':
         
         # Calculate total RGI area for this cluster (land-terminating only)
         rgi_area = datos_rgi[datos_rgi['Cluster'] == zona]
-        rgi_area = rgi_area[rgi_area['TermType'] == 0]
+        rgi_area = rgi_area[rgi_area['TermType'] != 1]
         rgi_area = rgi_area.Area.sum()
         
         ###########################################################################
