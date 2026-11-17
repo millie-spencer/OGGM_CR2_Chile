@@ -1,0 +1,71 @@
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/site-packages/oggm/__init__.py:8: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2026-11-16 16:04:45: oggm.cfg: Reading default parameters from the OGGM `params.cfg` configuration file.
+2026-11-16 16:04:45: oggm.cfg: Multiprocessing switched OFF according to the parameter file.
+2026-11-16 16:04:45: oggm.cfg: Multiprocessing: using all available processors (N=8)
+2026-11-16 16:04:45: oggm.cfg: PARAMS['continue_on_error'] changed from `False` to `True`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['run_mb_calibration'] changed from `False` to `True`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['store_model_geometry'] changed from `False` to `True`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['border'] changed from `40` to `80`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['store_fl_diagnostics'] changed from `False` to `True`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['hydro_month_nh'] changed from `10` to `1`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['hydro_month_sh'] changed from `4` to `1`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['max_mu_star'] changed from `10000.0` to `600`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['temp_melt'] changed from `-1.0` to `0`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['cfl_min_dt'] changed from `60.0` to `10`.
+2026-11-16 16:04:45: oggm.cfg: PARAMS['prcp_scaling_factor'] changed from `2.5` to `1.0`.
+2026-11-16 16:04:45: oggm.cfg: WARNING: adding an unknown parameter `use_winter_prcp_factor`:`False` to PARAMS.
+2026-11-16 16:04:46: oggm.workflow: init_glacier_directories from prepro level 2 on 34 glaciers.
+2026-11-16 16:04:49: oggm.workflow: Execute entity tasks [gdir_from_prepro] on 34 glaciers
+2026-11-16 16:04:49: oggm.workflow: WARNING: you are trying to run an entity task on 34 glaciers with multiprocessing turned off. OGGM will run faster with multiprocessing turned on.
+2026-11-16 16:04:56: oggm.workflow: Execute entity tasks [process_cru_data] on 34 glaciers
+2026-11-16 16:04:56: oggm.workflow: WARNING: you are trying to run an entity task on 34 glaciers with multiprocessing turned off. OGGM will run faster with multiprocessing turned on.
+  0% of 212.7 MiB |                      | Elapsed Time: 0:00:00 ETA:  --:--:--
+
+======================================================================
+PROCESSING CLUSTER: OT3 with CRU climate data
+======================================================================
+
+Number of glaciers in OT3: 34
+Temperature lapse rate: -0.0065
+Precipitation factor: 1.0
+
+Initializing glacier directories...
+Successfully initialized 34 glacier directories
+
+Processing CRU climate data...
+  6% of 212.7 MiB |#                     | Elapsed Time: 0:00:15 ETA:   0:03:37
+ 13% of 212.7 MiB |##                    | Elapsed Time: 0:00:30 ETA:   0:03:18
+ 19% of 212.7 MiB |####                  | Elapsed Time: 0:00:45 ETA:   0:03:02
+ 26% of 212.7 MiB |#####                 | Elapsed Time: 0:01:00 ETA:   0:02:46
+ 33% of 212.7 MiB |#######               | Elapsed Time: 0:01:15 ETA:   0:02:31
+ 39% of 212.7 MiB |########              | Elapsed Time: 0:01:30 ETA:   0:02:15
+ 46% of 212.7 MiB |##########            | Elapsed Time: 0:01:45 ETA:   0:02:00
+ 53% of 212.7 MiB |###########           | Elapsed Time: 0:02:00 ETA:   0:01:45
+ 56% of 212.7 MiB |############          | Elapsed Time: 0:02:15 ETA:   0:01:43
+ 61% of 212.7 MiB |#############         | Elapsed Time: 0:02:30 ETA:   0:01:35
+ 67% of 212.7 MiB |##############        | Elapsed Time: 0:02:45 ETA:   0:01:21
+ 70% of 212.7 MiB |###############       | Elapsed Time: 0:03:01 ETA:   0:01:16
+ 71% of 212.7 MiB |###############       | Elapsed Time: 0:03:17 ETA:   0:01:20
+ 71% of 212.7 MiB |###############       | Elapsed Time: 0:03:33 ETA:   0:01:23
+ 72% of 212.7 MiB |###############       | Elapsed Time: 0:03:48 ETA:   0:01:26
+ 73% of 212.7 MiB |################      | Elapsed Time: 0:04:04 ETA:   0:01:29
+ 73% of 212.7 MiB |################      | Elapsed Time: 0:04:20 ETA:   0:01:31
+ 74% of 212.7 MiB |################      | Elapsed Time: 0:04:36 ETA:   0:01:33
+ 75% of 212.7 MiB |################      | Elapsed Time: 0:04:52 ETA:   0:01:34
+ 76% of 212.7 MiB |################      | Elapsed Time: 0:05:07 ETA:   0:01:35
+ 77% of 212.7 MiB |################      | Elapsed Time: 0:05:23 ETA:   0:01:36
+ 77% of 212.7 MiB |#################     | Elapsed Time: 0:05:39 ETA:   0:01:36
+ 78% of 212.7 MiB |#################     | Elapsed Time: 0:05:54 ETA:   0:01:36
+ 79% of 212.7 MiB |#################     | Elapsed Time: 0:06:10 ETA:   0:01:36
+ 80% of 212.7 MiB |#################     | Elapsed Time: 0:06:25 ETA:   0:01:36
+ 80% of 212.7 MiB |#################     | Elapsed Time: 0:06:41 ETA:   0:01:35
+ 81% of 212.7 MiB |#################     | Elapsed Time: 0:06:57 ETA:   0:01:34
+ 82% of 212.7 MiB |##################    | Elapsed Time: 0:07:12 ETA:   0:01:32
+ 83% of 212.7 MiB |##################    | Elapsed Time: 0:07:27 ETA:   0:01:30
+ 83% of 212.7 MiB |##################    | Elapsed Time: 0:07:43 ETA:   0:01:29
+ 84% of 212.7 MiB |##################    | Elapsed Time: 0:07:59 ETA:   0:01:26
+ 85% of 212.7 MiB |##################    | Elapsed Time: 0:08:15 ETA:   0:01:24
+ 86% of 212.7 MiB |##################    | Elapsed Time: 0:08:30 ETA:   0:01:21
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

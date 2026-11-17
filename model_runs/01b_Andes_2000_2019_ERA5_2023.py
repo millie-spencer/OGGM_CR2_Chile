@@ -59,7 +59,7 @@ if __name__ == '__main__':
     
     # FULL RUN: Uncomment to run all clusters
     list_region = ['OT3','DA1','DA2','DA3','WA1','WA2','WA3','WA4','WA5','WA6']
-    
+
     for zona in list_region:
         
         print(f"\n{'='*70}")
@@ -73,7 +73,7 @@ if __name__ == '__main__':
         
         # Extract glaciers for this cluster
         gdf_sel = datos_rgi[datos_rgi['Cluster'] == zona]
-        gdf_sel = gdf_sel[gdf_sel['TermType'] == 0]   # land-terminating only; calving glaciers excluded
+        gdf_sel = gdf_sel[gdf_sel['TermType'] != 1]   # marine-terminating excluded; land- and lake-terminating kept
         gdf_sel = list(gdf_sel.RGIId)
         
         print(f"Number of glaciers in {zona}: {len(gdf_sel)}")
