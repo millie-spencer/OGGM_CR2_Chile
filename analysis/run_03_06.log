@@ -1,0 +1,21 @@
+=== 18:41 running 03_glacier_streamflow_fraction.ipynb ===
+[NbConvertApp] Converting notebook 03_glacier_streamflow_fraction.ipynb to notebook
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/site-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+[NbConvertApp] Writing 4425289 bytes to 03_glacier_streamflow_fraction.ipynb
+=== 18:42 running 04_regression_analysis.ipynb ===
+[NbConvertApp] Converting notebook 04_regression_analysis.ipynb to notebook
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/site-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+[NbConvertApp] Writing 1239145 bytes to 04_regression_analysis.ipynb
+=== 18:44 running 05_megadrought_analysis.ipynb ===
+[NbConvertApp] Converting notebook 05_megadrought_analysis.ipynb to notebook
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/site-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+[NbConvertApp] Writing 1401840 bytes to 05_megadrought_analysis.ipynb
+=== 18:46 running 06_key_findings_summary.ipynb ===
+[NbConvertApp] Converting notebook 06_key_findings_summary.ipynb to notebook
+/Users/milliespencer/miniconda3/envs/oggm_cr2_env/lib/python3.11/site-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+[NbConvertApp] Writing 7762770 bytes to 06_key_findings_summary.ipynb
+=== 18:47 ALL DONE ===
